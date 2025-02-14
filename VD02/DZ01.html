@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточки пользователей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .photo {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .info {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <img class="photo" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Фото пользователя">
+    <div class="info">
+        <strong>Иван Иванов</strong>
+    </div>
+    <div class="info">
+        <a href="mailto:ivan.ivanov@example.com">ivan.ivanov@example.com</a>
+    </div>
+    <div class="info">
+        Дата рождения: 12.03.1985
+    </div>
+    <div class="info">
+        Город: Москва
+    </div>
+</div>
+
+<div class="card">
+    <img class="photo" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Фото пользователя">
+    <div class="info">
+        <strong>Анна Смирнова</strong>
+    </div>
+    <div class="info">
+        <a href="mailto:anna.smirnova@example.com">anna.smirnova@example.com</a>
+    </div>
+    <div class="info">
+        Дата рождения: 24.07.1990
+    </div>
+    <div class="info">
+        Город: Санкт-Петербург
+    </div>
+</div>
+
+<div class="card">
+    <img class="photo" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Фото пользователя">
+    <div class="info">
+        <strong>Петр Петров</strong>
+    </div>
+    <div class="info">
+        <a href="mailto:petr.petrov@example.com">petr.petrov@example.com</a>
+    </div>
+    <div class="info">
+        Дата рождения: 15.11.1982
+    </div>
+    <div class="info">
+        Город: Казань
+    </div>
+</div>
+
+</body>
+</html>
