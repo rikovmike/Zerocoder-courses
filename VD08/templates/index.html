@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Случайные цитаты</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+        .quote-box {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .tags {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-box">
+        <h2 id="quote">Загрузка...</h2>
+        <p id="author"></p>
+        <p class="tags" id="tags"></p>
+
+
+        <button class="btn btn-light mt-3" onclick="fetchQuote()">Новая цитата</button>
+    </div>
+
+    <script>
+        function fetchQuote() {
+            $.getJSON('/quote', function(data) {
+                $('#quote').hide().text('"' + data.content + '"').fadeIn(500);
+                $('#author').hide().text("- " + data.author).fadeIn(500);
+                $('#tags').hide().text("Теги: " + data.tags.join(', ')).fadeIn(500);
+                //$('#length').hide().text("Длина: " + data.length + " символов").fadeIn(500);
+                //$('#date').hide().text("Добавлено: " + data.dateAdded + " | Изменено: " + data.dateModified).fadeIn(500);
+            });
+        }
+
+        $(document).ready(fetchQuote);
+    </script>
+</body>
+</html>
