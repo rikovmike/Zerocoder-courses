@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+	<title>Новостная страница</title>
+{% endblock %}
+
+{% block content %}
+<h1>Новостная страница</h1>
+
+<div class="row">
+  {% for new in news %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ new.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Автор: {{ new.author }}
+          </h6>
+          <p class="card-text">{{ new.short_description }}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Опубликовано: {{ new.pub_date }}</small>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
