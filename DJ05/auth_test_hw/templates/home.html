@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="tech-card p-5 text-center">
+            <h1 class="display-4 mb-4">Добро пожаловать в Auth Test HW</h1>
+            <p class="lead mb-4">Современное высокотехнологичное приложение для аутентификации пользователей</p>
+            
+            {% if user.is_authenticated %}
+                <p>Вы вошли как <strong>{{ user.username }}</strong></p>
+                <a href="{% url 'profile' %}" class="tech-btn">Перейти в профиль</a>
+            {% else %}
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="{% url 'login' %}" class="tech-btn">Войти</a>
+                    <a href="{% url 'register' %}" class="tech-btn">Зарегистрироваться</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
