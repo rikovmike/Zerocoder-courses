@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+<title>Страница для добавления новостей</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Страница для добавления новостей</h1>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Форма для добавления новостей</h2>
+    </div>
+    <div class="card-body">
+      <form method="post">
+         {% csrf_token %}
+        <div class="form-group">
+          {{ form.title }}
+        </div>
+        <div class="form-group">
+          {{ form.short_description }}
+        </div>
+        <div class="form-group">
+          {{ form.text }}
+        </div>
+        <div class="form-group">
+          {{ form.pub_date }}
+        </div>
+        <div class="form-group">
+          <label for="time">Время</label>
+          <input type="time" class="form-control" id="time">
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить новость</button>
+      </form>
+      <p>{{error}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

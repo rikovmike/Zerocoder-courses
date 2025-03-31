@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    {% block title %}{% endblock %}
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row align-items-center">
+            <aside class="col-md-2 text-center">
+                <img src="{% static 'main/img/131.png' %}" alt="я в пикселях" class="img-fluid rounded-circle mb-3 profile-img">
+            </aside>
+            <div class="col-md-10">
+                <div class="custom-header">
+                    <h1 class="display-4">Rikovmike</h1>
+                </div>
+                {% include 'main/nav.html' %}
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+        {% include 'main/footer.html' %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

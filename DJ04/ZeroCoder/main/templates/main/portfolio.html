@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% block title %}<title>Портфолио</title>{% endblock %}
+{% block content %}
+<div class="container">
+    <h2 class="mt-4">Моё портфолио</h2>
+    <p class="lead">Добро пожаловать в моё портфолио! Здесь вы найдете мои лучшие работы.</p>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://source.unsplash.com/random/400x300?tech" class="card-img-top" alt="Проект 1">
+                <div class="card-body">
+                    <h5 class="card-title">Проект 1</h5>
+                    <p class="card-text">Описание проекта.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://source.unsplash.com/random/400x300?design" class="card-img-top" alt="Проект 2">
+                <div class="card-body">
+                    <h5 class="card-title">Проект 2</h5>
+                    <p class="card-text">Описание проекта.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
